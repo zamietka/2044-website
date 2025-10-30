@@ -356,7 +356,7 @@ pointer-events:none;
 	height:4px;
 	border: 1px solid #3c8e33;
 	margin-bottom: 1em;
-	cursor: pointer;
+	cursor: url('/images/cursorlink.gif') 3 3, pointer;
 	width:100%
 }
 
