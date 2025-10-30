@@ -1,0 +1,370 @@
+
+html { cursor: url('/images/cursor.gif'), default;
+}
+
+body {
+  background-color: black;
+  color: #3c8e33;
+  font-family: "Nokia Cellphone FC", sans-serif;
+  font-size: 12px;
+}
+
+a{
+  cursor: url('/images/cursorlink.gif') 3 3, pointer;
+}
+
+
+a:link {
+  color: #3c8e33;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #3c8e33;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+
+#cat {
+  position: absolute;
+  margin-top: -20px;
+  /*transition: 0.05s ease-out;*/
+}
+
+
+#container {
+  max-width: 900px;
+  margin: 0 auto;
+  }
+
+#header {
+      background-color: #000000;
+      height: auto;
+      background-size: 100%;
+      overflow: hidden;
+  }
+
+#menu {
+      height: auto;
+      background-color: #000000;
+      border: 1px solid #3c8e33;
+      border-color: #3c8e33;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+
+  }
+
+#home {
+    overflow-y: scroll;
+    height: 550px;
+    scrollbar-width: thin;
+    scrollbar-color: #3c8e33 #000000;
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: 000000;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+    border: 3px solid #3c8e33;
+  }
+
+  
+button {
+  border: 1px solid #3c8e33;
+  border-color: #3c8e33;
+  background-color:#000000;
+  color:#3c8e33;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Nokia Cellphone FC";
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: url('/images/cursorlink.gif') 3 3, pointer;
+  background-color:#3c8e33;
+  color:#000000;
+}
+
+#flex {
+      display: flex;
+  }
+
+aside {
+    color: transparent;
+    text-shadow: 0 0 1px #000000;
+    background-color: #387d30;
+    border-radius: 1em;
+    width: 200px;
+    padding: 0px 30px 0px 30px;
+    font-size: smaller;
+    margin-right: 10px;
+    height:280px;
+    background-image:url("/images/nokia-bg.png");
+    background-repeat: no-repeat;
+    background-size: auto; 
+    box-sizing: border-box;         
+  }
+  aside a{
+    color:#000000 !important;
+  }
+  aside a:hover{
+    color:#ffffff !important;
+  }
+
+#extras {
+  width: 200px;
+  height:50%;
+  
+}
+main {
+    border: 1px solid #3c8e33;
+    flex: 1;
+    padding: 20px;
+    width:70%;height:100%
+    
+}
+
+
+  footer {
+      height: auto;
+      padding: 10px;
+      text-align: center;
+      font-size:7px;
+      border: 1px solid #3c8e33;
+      border-radius: 0em 0em 1em 1em;
+  }
+
+  h1 {
+      font-size: 20px;
+      margin-bottom: 1em;
+  }
+
+
+  #topBar {
+      height: auto;
+      padding: 10px;
+      font-size: 9px;
+      border: 1px solid #3c8e33;
+      border-radius: 1em 1em 0em 0em;
+  }
+
+  figure {
+  margin: 1em 0 2em 0;
+  }
+
+  figcaption {
+    margin-bottom:1em;
+  }
+
+  @media only screen and (max-width: 800px) {
+      #flex {
+        flex-wrap: wrap;
+        display:flex;
+        flex-direction:column;
+      }
+      .naglowek {
+          width: 200%;
+          height: auto;
+          margin-left: -50%;
+      }
+      #header {
+          height: auto;
+      }
+      aside {
+        clear: both;
+        order: 2;
+        width:200px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+      }
+      main {
+        order: 1;
+      }
+
+      #cat {
+        visibility: hidden;
+      }
+
+  }
+  
+.dropbtn {
+  border: 1px solid #3c8e33;
+  background-color:#000000;
+  color:#3c8e33;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: Nokia Cellphone FC;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  cursor: url('/images/cursorlink.gif') 3 3, pointer;
+  border: 1px solid #3c8e33;
+  background-color:#3c8e33;
+  color:#000000;
+}
+
+.dropdown {
+  position:relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  cursor: url('/images/cursor.gif'), default;
+  border: 1px solid #3c8e33;
+  background-color:#000000;
+  color:#3c8e33;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: Nokia Cellphone FC;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
+  z-index: 1;
+}
+
+
+
+#overlay {
+  margin-left:-30px;
+  background-image: url(images/crt1.png);
+  width: 200px;
+  height: 280px;
+  background-blend-mode: overlay;
+  z-index: 2;
+  box-shadow: 0 0 10px 1px #00ffc8 inset, 0 0 10px 1px #00ffc8, 0 0 30px 10px #3bcb86;
+  position: absolute;
+  overflow: hidden;
+opacity:0.1;
+pointer-events:none;
+
+}
+#overlay2 {
+    
+  box-shadow: 0 0 10px 1px #00ffc8 inset, 0 0 10px 1px #00ffc8, 0 0 30px 10px #3bcb86;
+  background-blend-mode: overlay;
+  z-index: 3;
+  position: absolute;
+  overflow: hidden;
+  opacity:0.15;
+  border-radius: 1em;
+  background-color: #00ff80;
+  animation: flickerscreen 1s linear  reverse infinite;
+  -webkit-filter: blur(0.3px);
+    -moz-filter: blur(0.3px);
+    -o-filter: blur(0.3px);
+    -ms-filter: blur(0.3px);
+    filter: blur(0.4px);
+    pointer-events:none;
+}
+
+
+
+.imgcontainer {
+		 filter: sepia(60%) hue-rotate(70deg) saturate(1.5) brightness(0.6);
+
+		}
+		 
+.imgcontainer:hover {
+		 filter: none;
+		}
+
+    
+.show {display: block;}
+
+
+@keyframes flickerscreen {
+
+5% {
+  opacity: 0.1;
+  
+}
+10% {
+  opacity: 0.1;
+}
+15% {
+  opacity: 0.15;
+}
+25% {
+  opacity: 0.1;
+}
+30% {
+  opacity: 0.1;
+}
+35% {
+  opacity: 0.07;
+}
+40% {
+  opacity: 0.12;
+}
+45% {
+  opacity: 0.07;
+}
+60% {
+  opacity: 0.11;
+}
+70% {
+  opacity: 0.12;
+}
+80% {
+  opacity: 0.1;
+}
+90% {
+  opacity: 0.08;
+}
+100% {
+  opacity: 0.1;
+}
+}
+
+
+
+/*Music player*/
+.musicplayer {
+	width: 200px;
+	text-align: center;
+}
+
+.progresscontainer {
+	height:4px;
+	border: 1px solid #3c8e33;
+	margin-bottom: 1em;
+	cursor: pointer;
+	width:100%
+}
+
+.musicprogress {
+	background-color: #3c8e33;
+	height:100%;
+	width:0%;
+}
+#musiccat {
+	image-rendering: pixelated;
+}

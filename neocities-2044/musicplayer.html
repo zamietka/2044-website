@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>  
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		@font-face {
+    font-family: 'Nokia Cellphone FC';
+    src: url("/fonts/nokia_cellphone.woff");
+    }
+body {
+  background-color: black;
+  color: #3c8e33;
+  font-family: "Nokia Cellphone FC", sans-serif;
+  font-size: 12px;
+}
+
+
+	</style>
+
+</head>
+
+
+
+<body>
+<div class="musicplayer">
+	<div class="musicinfo">
+		<p class="songname">Gyms - Dog Town</p>
+		<div class="progresscontainer">
+			<div class="musicprogress">
+			</div>
+		</div>
+	</div>
+
+	<audio src="Gyms - Dog Town.mp3" id="audio"></audio>
+
+	<div class="img-container">
+		<img src="images/musiccat.gif" id="musiccat" width="36px">
+	</div>
+	
+	<div class="musicbuttons">
+	<button class="prev">
+		Previous
+	</button>
+	<button class="play">
+		Play
+	</button>
+	<button class="next">
+		Next
+	</button>
+    </div>
+</div>
+
+</body>
+
+	<script src="music.js">
+		
+	</script>
+</html>

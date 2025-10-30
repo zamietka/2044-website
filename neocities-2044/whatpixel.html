@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goner 44</title>
+    <link href="/style2.css" rel="stylesheet" type="text/css" media="all">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+    @font-face {
+  font-family: 'Nokia Cellphone FC';
+  src: url(https://2044.neocities.org/fonts/nokia_cellphone.woff);
+}
+  </style> 
+
+<style>
+
+
+</style>
+
+</head>
+
+  <body>
+    <div id="container">
+      <a class="button" href="https://2044.neocities.org/"> &lt; Back </a>
+
+  
+   
+    <p>Just so you know, this is a space for rambles, but I am in no way a technician, I just like to draw :)</p>
+    <h1>What is a pixel?</h1>
+<p>Here is me, basically trying to grasp some ideas based on wikipedia and resources online :D 
+<p>What even is a pixel? Well, depends on the sort of screen you have, basically. We all know that modern LCD pixels are usually in a square shape, and a bunch of these squares create an image. It's a bit more complicated than that, since it's actually made of red, green and blue rectangles, but for the sake of keeping it simplified, it works.
+</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Liquid_Crystal_Display_Macro_Example_zoom_2.jpg/1024px-Liquid_Crystal_Display_Macro_Example_zoom_2.jpg" width=300px>
+          <p>
+          <br> 
+          <p>In terms of retro aesthetics, we tend to think of CRT screens, though; where the pixels are pretty much made by electron guns. That means they are more similar to blurry dots, if anything, not quite squares.
+          <p></p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/CRT_pixels_close-up_crop.JPG" height=300px>
+          <p><iframe width="420" height="345" src="https://www.youtube.com/embed/3BJU2drrtCM"></iframe>
+            <p>The low refresh rate can additionally cause that screen to flicker, and the row of the electron guns - scanlines - show to the naked eye. These aspects were what often gave the retro graphics an unique, a bit blurry look. But the designers often used it to their advantage. Look at this example with the old Castlevania.
+              <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj6kpOHyOnuT_IGaKQ4O8teTZN3As0SiJaDg&s"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLYbEeU0rqOqvX_iiBYoqowYSiNnUhQoYLw&s">
+
+              </iframe>
+              <p>Obviously, it all also depended on the type of monitor you used. A lot of them, even in the early graphics era, were free of these effects, producing a quite clear image. Still, it can be kind of ironic how nowadays we almost never see anything resembling this effect - we prefer the square blocky pixels look without any blur or artifacts. But some games do emulate this look; for example Sonic Mania:
+                <p><iframe width="420" height="345" src="https://www.youtube.com/embed/Uphh3rvdcTE">
+                </iframe>
+                
+              <p>There is also RetroArch - a frontend for emulators - that is known for build-in shaders that emulate that look as well. It seems like a good compromise - keeping the possibility of having a clear or a blurry image depending on the user's preferences.
+                <br>
+                <br>
+                <p>One more aspect I haven't see much in retro gaming scenes - some old monitors were not quite based on pixels at all, but on vectors. At the time, it helped to obtain a clearer image, but with bigger limitations on what could be drawn as well. You can see it in some of the 70s arcade games, especially space shooters, and later on, a home console called Vectrex was even released. I can understand why it's something not many people want to see in the modern era - these vector games looked weird and wonky, but I found them important to mention anyway :D
+                  <p><img src="https://upload.wikimedia.org/wikipedia/en/5/5f/Star_wars_gameplay.png">
+                    <p>Star Wars game!</p>
+                    <br>
+                  <p><iframe width="420" height="345" src="https://youtube.com/embed/yUB6OYeCKek?"></iframe>
+                  </p>
+<br>
+<p><b>Sources:</b></p>
+<p>Wikipedia, obviously.</p>
+          <p></p><a href="https://blog.johnnovak.net/2022/04/15/achieving-period-correct-graphics-in-personal-computer-emulators-part-1-the-amiga/#analog-rgb-vs-tv-standards">This blog I found</a>
+          <p></p><a href="https://x.com/CRTpixels">CRT pixels on Twitter</a>
+          <p></p>
+          <canvas id="myDrawing" width="578" height="200"></canvas>
+          <script>
+            var canvas = document.getElementById('myDrawing');
+            var ctx = canvas.getContext('2d');
+            ctx.beginPath();
+    ctx.lineTo(74, 49);
+    ctx.lineTo(60 , 76 );
+    ctx.lineTo(86 , 57 );
+    ctx.lineTo(86 , 15 );
+    ctx.lineTo(57 , 40 );
+    ctx.lineTo(25 , 15 );
+    ctx.lineTo(25 , 57 );
+    ctx.lineTo(59 , 76 );
+    ctx.lineTo(63 , 153);
+    ctx.lineTo(135, 155);
+    ctx.lineTo(201, 79 );
+    ctx.lineTo(155, 93 );
+    ctx.lineTo(135, 154);
+    ctx.lineTo(57 , 75 );
+    ctx.lineTo(40 , 49 );
+    ctx.strokeStyle = '#3c8e33';
+    ctx.stroke();
+          </script>
+ 
+            
+          <p> Until next time.<br>
+
+ <p></p>
+ <a class="button" href="https://2044.neocities.org/"> &lt; Back </a>
+          
+
+  </div>
+ 
+  </body>
+</html>

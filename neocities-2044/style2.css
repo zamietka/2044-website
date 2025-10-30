@@ -1,0 +1,291 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+   html { cursor: url('/images/cursor.gif'), default;
+
+   }
+
+
+
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: 000000;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+    border: 3px solid #3c8e33;
+  }
+  
+
+#c_widget {
+  border-radius: 2em;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
+  background-color: black;
+  font-family: 'Nokia Cellphone FC';
+  font-size: 16px;
+  color: #3c8e33;
+  scrollbar-width: thin;
+  scrollbar-color: #3c8e33 #000000;
+}
+
+#c_widget button, #c_widget input[type=submit] {
+  border: 1px solid #3c8e33;
+  border-color: #3c8e33;
+  background-color:#000000;
+  color:#3c8e33;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+  font-family: 'Nokia Cellphone FC';
+  margin: 4px 10px;
+  cursor: pointer;
+}
+#c_widget button:hover, #c_widget input[type=submit]:hover {
+  background-color:#3c8e33;
+  color:#000000;
+}
+#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
+#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
+  color: #3c8e33;
+  border: 1px solid #3c8e33;
+}
+
+/* Input section */
+#c_inputDiv {
+  border-radius: 1em;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: black;
+  border: 1px solid #3c8e33;
+}
+
+#c_widgetTitle {
+  margin: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: black;
+}
+
+.c-inputWrapper {
+  display: block;
+  text-align: right;
+}
+.c-input {
+  padding: 4px;
+  background-color: black;
+  color: #3c8e33;
+  border: 1px solid #3c8e33;
+outline: none;
+font-family: 'Nokia Cellphone FC';
+}
+.c-input:focus {border: 1px solid #3c8e33;}
+
+.c-textInput {
+  width: calc(100% - 10px);
+  max-width: 900px;
+  resize: none;
+}
+#c_submitButton {
+  display: block; 
+  margin-left: auto; 
+  margin-right: 0;
+}
+#c_replyingText {
+  color: #3c8e33;
+  text-align: right;
+}
+
+/* Comment section */
+.c-comment {
+  margin-bottom: 15px;
+  padding: 10px;
+
+  background-color: black; 
+}
+.c-reply {
+  display: block;
+  width: 90%;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 10px;
+  background-color: black; 
+}
+.c-reply:last-child {margin-bottom: 0;}
+.c-replyContainer {
+  margin: -10px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: black;
+}
+
+.c-name {
+  display: inline-block;
+  margin: 0;
+  margin-right: 10px;
+  padding: 0;
+  color: #3c8e33;
+}
+.c-site {
+  
+  text-decoration: none;
+  color: #3c8e33;
+}
+.c-site:hover {color: white;}
+.c-timestamp {
+  float: right;
+  font-size:8px;
+}
+.c-text {
+  margin: 0;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 10px;
+  font-size: 14px;
+  text-align: justify;
+  color: #3c8e33;
+  background-color: black;
+}
+
+/* Pagination */
+#c_pagination {text-align: center; background-color: #000000;}
+.c-replyButton {
+  margin-top: 10px;
+  margin-right: 4px;
+}
+.c-expandButton {
+  margin-top: 10px;
+  margin-left: 4px;
+}
+.c-paginationButton {
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+
+body {
+  background-color: black;
+  color: #3c8e33;
+  font-family: "Nokia Cellphone FC", sans-serif;
+  font-size: 12px;
+}
+
+
+
+a:link {
+  color: #3c8e33;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #3c8e33;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+
+h1 {
+  font-size: 20px;
+}
+
+  
+ .button {
+  border: 1px solid #3c8e33;
+  border-color: #3c8e33;
+  background-color:#000000;
+  color:#3c8e33;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: Nokia Cellphone FC;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color:#3c8e33;
+  color:#000000;
+}
+
+
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #3c8e33;
+    border-radius: 1em;
+    max-width: 900px;
+    padding: 20px;
+
+  }
+
+
+  .form-input { 
+    margin-bottom: 11px; 
+} 
+  
+.form-input label { 
+    
+    display: block; 
+    margin-bottom: 5px; 
+} 
+
+input[type=text]:focus {
+  border: 3px solid #3c8e33;
+  outline: none;
+}
+  
+.form-input input { 
+    width: 80%; 
+    padding: 10px; 
+    border: 1px solid #3c8e33;
+    background-color: #000000; 
+    color: #3c8e33;
+} 
+
+.comment-card h2 { 
+  margin: 0; 
+} 
+
+.comment-card p { 
+  margin: 5px 0; 
+}
+
+  
+  @media only screen and (max-width: 800px) {
+
+      #container {
+        clear: both;
+        order: 2;
+        max-width:75em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        padding: 10px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+  }
+  
+
+
+
