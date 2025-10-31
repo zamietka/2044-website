@@ -189,7 +189,6 @@ main {
       }
       aside {
         clear: both;
-        order: 2;
         width:200px;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -198,11 +197,27 @@ main {
         display:block;
       }
       main {
-        order: 1;
+        clear: both;
+        width:80%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display:block;
+                margin-left:auto;
+        margin-right:auto;
+
       }
 
       #cat {
         visibility: hidden;
+      }
+      .extras {
+ 
+        width:200px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
       }
 
   }
