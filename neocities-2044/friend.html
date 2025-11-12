@@ -16,6 +16,23 @@ body {
   font-size: 12px;
 }
 
+#friendcontainer {
+	cursor:pointer;
+	position: fixed;
+	    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#page {
+	top:0;
+	width:500px;
+	height:400px;
+	background-color: red;
+}
 
 	</style>
 
@@ -24,37 +41,17 @@ body {
 
 
 <body>
-<div class="musicplayer">
-	<div class="musicinfo">
-		<p class="songname">Gyms - Dog Town</p>
-		<div class="progresscontainer">
-			<div class="musicprogress">
-			</div>
-		</div>
+	<div id="page">
+	<div id="friendcontainer">
+		<img ondragstart="return false;" src="images/umbreon.gif">
 	</div>
-
-	<audio src="Gyms - Dog Town.mp3" id="audio"></audio>
-
-	<div class="img-container">
-		<img src="images/musiccat.gif" id="musiccat" width="36px">
 	</div>
-	
-	<div class="musicbuttons">
-	<button class="prev">
-		Previous
-	</button>
-	<button class="play">
-		Play
-	</button>
-	<button class="next">
-		Next
-	</button>
-    </div>
-</div>
+	<div id="page2" style="background-color: blue; width:500px; height:500px; margin-top:50px;">
 
+	</div>
 </body>
-
-	<script src="music.js">
+	<script src="friend.js">
 		
 	</script>
+
 </html>

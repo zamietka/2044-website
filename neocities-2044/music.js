@@ -47,7 +47,7 @@ const songList = [
     src: 'https://github.com/zamietka/2044-website/raw/refs/heads/main/neocities-2044/Legend%20of%20Zelda,%20The%20(NES)%20Music%20-%20Ending%20Theme.mp3'
   },
   {
-    title: 'Pokémon Gold & Silver - Routes 26-27.mp3',
+    title: 'PokÃ©mon Gold & Silver - Routes 26-27.mp3',
     src: 'https://github.com/zamietka/2044-website/raw/refs/heads/main/neocities-2044/Pok%C3%A9mon%20Gold%20&%20Silver%20-%20Routes%2026-27.mp3'
   },
   {
