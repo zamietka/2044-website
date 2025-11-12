@@ -17,7 +17,6 @@ body {
 }
 
 #friendcontainer {
-	cursor:pointer;
 	position: fixed;
 	    user-drag: none;
     -webkit-user-drag: none;
@@ -28,10 +27,15 @@ body {
 }
 
 #page {
-	top:0;
+	margin-top:200px;
 	width:500px;
 	height:400px;
-	background-color: red;
+	border: 1px solid #3c8e33;
+}
+
+#main {
+	display: flex;
+	height:900px;
 }
 
 	</style>
@@ -41,13 +45,14 @@ body {
 
 
 <body>
-	<div id="page">
+	<div id="main">
 	<div id="friendcontainer">
-		<img ondragstart="return false;" src="images/umbreon.gif">
+	<img ondragstart="return false;" src="images/umbreon.gif">
 	</div>
-	</div>
-	<div id="page2" style="background-color: blue; width:500px; height:500px; margin-top:50px;">
+	<div id="page"></div>
+	<div id="page2" style="	border: 1px solid #3c8e33; width:500px; height:100px; margin-top:350px;">
 
+	</div>
 	</div>
 </body>
 	<script src="friend.js">
