@@ -10,15 +10,15 @@
     src: url("/fonts/nokia_cellphone.woff");
     }
 body {
-  background-color: black;
-  color: #3c8e33;
+  background: #2A7B9B;
+  background: linear-gradient(297deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(83, 188, 237, 1) 100%);
   font-family: "Nokia Cellphone FC", sans-serif;
   font-size: 12px;
 }
 
 #friendcontainer {
 	position: fixed;
-	    user-drag: none;
+	user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -26,17 +26,15 @@ body {
     -ms-user-select: none;
 }
 
-#page {
-	margin-top:200px;
-	width:500px;
-	height:400px;
-	border: 1px solid #3c8e33;
-}
 
 #main {
-	display: flex;
 	height:900px;
+	margin: auto;
+	width:50%;
 }
+
+
+
 
 	</style>
 
@@ -45,18 +43,23 @@ body {
 
 
 <body>
-	<div id="main">
-	<div id="friendcontainer">
-	<img ondragstart="return false;" src="images/umbreon.gif">
-	</div>
-	<div id="page"></div>
-	<div id="page2" style="	border: 1px solid #3c8e33; width:500px; height:100px; margin-top:350px;">
-
-	</div>
+	<div id="flex">
+		<div id="friendbox">
+			<img id="friendcontainer" ondragstart="return false;" src="images/animacjawake.gif">
+			</div>
+		<div id="main">
+			
+			<div id="Test1"><h1>A little bit on virtual assistants, desktop pets, shimejis</h1>
+				<p>Chances are</p>
+			</div>
+			<div id="ghostdiv2" style="	border: 1px solid #3c8e33; width:500px; height:100px;">
+			</div>
+			<div id="ghostdiv1" style="	border: 1px solid #3c8e33; width:500px; height:100px;"></div>
+		</div>
 	</div>
 </body>
 	<script src="friend.js">
-		
+		randomActions ();
 	</script>
 
 </html>
