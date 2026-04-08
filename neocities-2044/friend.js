@@ -1,28 +1,13 @@
 const friendcontainer = document.querySelector('#friendcontainer');
 const flex = document.querySelector('#flex')
-const ghostdiv1 = document.querySelector('#ghostdiv1');
-const ghostdiv2 = document.querySelector('#ghostdiv2');
+let lastdirection = '';
 let isMouseDown = false;
 ghostHover = 0;
 catAwake = 0;
 
 randomActions () 
 
-
-ghostdiv1.addEventListener('mouseover', () => {
-    ghostHover = 1
-});
-ghostdiv2.addEventListener('mouseover', () => {
-    ghostHover = 2
-});
-
-ghostdiv1.addEventListener('mouseout', () => {
-    ghostHover = 0
-});
-ghostdiv2.addEventListener('mouseout', () => {
-    ghostHover = 0
-});
-
+//wakeup
 friendcontainer.addEventListener('click', () => {
     friendcontainer.src = "images/animacjawake2.gif";
     catAwake = 1;
@@ -32,7 +17,7 @@ friendcontainer.addEventListener('click', () => {
     
 })
 
-
+//dangle
 friendcontainer.addEventListener('mousedown', (e) => {
     friendcontainer.style.transition = '';
     if (catAwake === 1){ 
@@ -54,25 +39,41 @@ flex.addEventListener('mousemove', (e) => {
     }
 });
 
+//divy
+const ghostDivsA = [];
+for (let i = 1; i <= 4; i++) {
+  const ghostDivs = document.querySelector(`#ghostdiv${i}`);
+  ghostDivsA.push(ghostDivs);
+
+  ghostDivs.addEventListener('mouseover', () => {
+    ghostHover = i;
+  });
+  ghostDivs.addEventListener('mouseout', () => {
+    ghostHover = 0
+});
+
 flex.addEventListener('mouseup', () => {
     isMouseDown = false;
     friendcontainer.style.pointerEvents = 'auto';
-    if (ghostHover === 2){
-    friendcontainer.style.top = `${ghostdiv2.offsetTop - friendcontainer.offsetHeight + ghostdiv2.offsetHeight}px`;
-    }
-    else if (ghostHover === 1) {
-        friendcontainer.style.top = `${ghostdiv1.offsetTop - friendcontainer.offsetHeight + ghostdiv1.offsetHeight}px`;
+    if (ghostHover === i && catAwake === 1){
+    friendcontainer.style.top = `${ghostDivs.offsetTop - friendcontainer.offsetHeight + ghostDivs.offsetHeight}px`;
     }
     else if (ghostHover === 0 && catAwake === 1) {
         friendcontainer.style.top = `${flex.offsetHeight - friendcontainer.offsetHeight}px`;
     }
+    if (catAwake === 1) {
     friendcontainer.style.transition = 'top 0.5s ease';
     setTimeout(() => {
     friendcontainer.style.transition = '';
     }, 500);
     friendcontainer.src ="images/animacjaidle.gif"
-
+}
 });
+}
+
+
+
+//losowe lewo prawo
 function randomActions () {
     friendcontainer.style.transition = '';
     const random = Math.floor(Math.random() * 3);
@@ -90,7 +91,9 @@ function randomActions () {
         }
 
         if (random === 1) {
-            friendcontainer.src ="images/animacja-right.gif";
+            lastdirection = "right";
+            friendcontainer.style.transform = 'scale(-1, 1)';
+            friendcontainer.src ="images/animacja-LEFT.gif";
             for (let step = 0; step < randomstep; step++) {
                 setTimeout(() => {
                     if (isMouseDown === false) {
@@ -103,6 +106,8 @@ function randomActions () {
         }
 
         if (random === 2) {
+            lastdirection = "left";
+            friendcontainer.style.transform = 'scale(1, 1)';
             friendcontainer.src ="images/animacja-LEFT.gif";
             for (let step = 0; step < randomstep; step++) {
                 setTimeout(() => {
@@ -117,12 +122,19 @@ function randomActions () {
 
         setTimeout(() => {
             if (isMouseDown === false) {
-                friendcontainer.src ="images/animacjaidle.gif";
+                if (lastdirection === "right") {
+                    friendcontainer.src ="images/animacjaidle.gif"
+                    friendcontainer.style.transform = 'scale(-1, 1)';
+                    console.log(lastdirection);
+                }
+                if (lastdirection === "left") {
+                    friendcontainer.src ="images/animacjaidle.gif"
+                    friendcontainer.style.transform = 'scale(1, 1)';
+                    console.log(lastdirection);
+                }    
             }
             randomActions();
         }, randomstep * 500);
 
     }, delay);
 }
-
-
