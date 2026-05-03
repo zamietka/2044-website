@@ -1,4 +1,7 @@
 const friendcontainer = document.querySelector('#friendcontainer');
+const friendimg = document.querySelector('#friendimg');
+const friendcontext = document.querySelector('#friendcontext');
+const friendmenu = document.querySelector('#friendmenu');
 const flex = document.querySelector('#flex')
 let lastdirection = '';
 let isMouseDown = false;
@@ -7,31 +10,55 @@ catAwake = 0;
 
 randomActions () 
 
+friendmenu.style.display = 'none';
+
 //wakeup
 friendcontainer.addEventListener('click', () => {
-    friendcontainer.src = "images/animacjawake2.gif";
+    friendimg.src = "images/animacjawake2.gif";
     catAwake = 1;
     setTimeout(() => {
-    friendcontainer.src ="images/animacjaidle.gif"
+    friendimg.src ="images/animacjaidle.gif"
   }, 1200);
-    
+  friendcontext.style.display = 'none';
 })
 
+//menu
+friendcontainer.addEventListener('contextmenu', (e) => {
+    contextmenuon = true;
+    e.preventDefault(); 
+    friendmenu.style.display = 'inline';
+})
+
+//disable menu
+document.addEventListener('mousedown', (e) => {
+    if (contextmenuon === true) {
+    setTimeout(() => {
+        contextmenuon = false;
+        friendmenu.style.display = 'none';
+        }, 400);
+    }
+    });
+
 //dangle
-friendcontainer.addEventListener('mousedown', (e) => {
+friendimg.addEventListener('mousedown', (e) => {
+    contextmenuon = false;
+    dangleon = true;
+    friendmenu.style.display = 'none';
+    if (e.button !== 0) return;
     friendcontainer.style.transition = '';
     if (catAwake === 1){ 
-    friendcontainer.src ="images/animacjadangle.gif"
-    isMouseDown = true;
-    friendcontainer.style.pointerEvents = 'none';
-    friendcontainer.style.left = `${e.clientX - 30}px`;
-    friendcontainer.style.top = `${e.clientY + 10}px`;
-    x = e.clientX - friendcontainer.offsetLeft;
-    y = e.clientY - friendcontainer.offsetTop;
+        friendimg.src ="images/animacjadangle.gif"
+        isMouseDown = true;
+        friendcontainer.style.pointerEvents = 'none';
+        friendcontainer.style.left = `${e.clientX - 30}px`;
+        friendcontainer.style.top = `${e.clientY + 10}px`;
+        x = e.clientX - friendcontainer.offsetLeft;
+        y = e.clientY - friendcontainer.offsetTop;
     }
 });
 
-flex.addEventListener('mousemove', (e) => {
+
+document.addEventListener('mousemove', (e) => {
     
     if (isMouseDown) {
         friendcontainer.style.left = `${e.clientX - 30}px`;
@@ -52,29 +79,35 @@ for (let i = 1; i <= 4; i++) {
     ghostHover = 0
 });
 
-flex.addEventListener('mouseup', () => {
+
+    
+document.addEventListener('mouseup', (e) => {
     isMouseDown = false;
     friendcontainer.style.pointerEvents = 'auto';
     if (ghostHover === i && catAwake === 1){
-    friendcontainer.style.top = `${ghostDivs.offsetTop - friendcontainer.offsetHeight + ghostDivs.offsetHeight}px`;
+        friendcontainer.style.top = `${ghostDivs.offsetTop - friendcontainer.offsetHeight + ghostDivs.offsetHeight}px`;
     }
-    else if (ghostHover === 0 && catAwake === 1) {
-        friendcontainer.style.top = `${flex.offsetHeight - friendcontainer.offsetHeight}px`;
+    // else if (ghostHover === 0 && catAwake === 1 && e.button !== 2) {
+    //     friendcontainer.style.top = `${flex.offsetHeight - friendcontainer.offsetHeight}px`;
+    // }
+    if (catAwake === 1 && dangleon === true) {
+        friendcontainer.style.transition = 'top 0.5s ease';
+        setTimeout(() => {
+        friendcontainer.style.transition = '';
+        }, 500);
+        friendimg.src ="images/animacjaidle.gif"
     }
-    if (catAwake === 1) {
-    friendcontainer.style.transition = 'top 0.5s ease';
-    setTimeout(() => {
-    friendcontainer.style.transition = '';
-    }, 500);
-    friendcontainer.src ="images/animacjaidle.gif"
-}
 });
 }
 
-
+function pet() {
+    alert('wee');
+    friendimg.src ="images/animacjawake.gif"
+}
 
 //losowe lewo prawo
 function randomActions () {
+    dangleon = false;
     friendcontainer.style.transition = '';
     const random = Math.floor(Math.random() * 3);
     const randomstep = Math.floor(Math.random() * 7 + 1);
@@ -82,18 +115,14 @@ function randomActions () {
 
     setTimeout(() => {
 
-        if (isMouseDown) {
+        if (isMouseDown || catAwake !== 1 || contextmenuon) {
             return randomActions(); 
-        }
-
-        if (catAwake !== 1) {
-            return randomActions();
         }
 
         if (random === 1) {
             lastdirection = "right";
-            friendcontainer.style.transform = 'scale(-1, 1)';
-            friendcontainer.src ="images/animacja-LEFT.gif";
+            friendimg.style.transform = 'scale(-1, 1)';
+            friendimg.src ="images/animacja-LEFT.gif";
             for (let step = 0; step < randomstep; step++) {
                 setTimeout(() => {
                     if (isMouseDown === false) {
@@ -107,8 +136,8 @@ function randomActions () {
 
         if (random === 2) {
             lastdirection = "left";
-            friendcontainer.style.transform = 'scale(1, 1)';
-            friendcontainer.src ="images/animacja-LEFT.gif";
+            friendimg.style.transform = 'scale(1, 1)';
+            friendimg.src ="images/animacja-LEFT.gif";
             for (let step = 0; step < randomstep; step++) {
                 setTimeout(() => {
                     if (isMouseDown === false) {
@@ -123,13 +152,13 @@ function randomActions () {
         setTimeout(() => {
             if (isMouseDown === false) {
                 if (lastdirection === "right") {
-                    friendcontainer.src ="images/animacjaidle.gif"
-                    friendcontainer.style.transform = 'scale(-1, 1)';
+                    friendimg.src ="images/animacjaidle.gif"
+                    friendimg.style.transform = 'scale(-1, 1)';
                     console.log(lastdirection);
                 }
                 if (lastdirection === "left") {
-                    friendcontainer.src ="images/animacjaidle.gif"
-                    friendcontainer.style.transform = 'scale(1, 1)';
+                    friendimg.src ="images/animacjaidle.gif"
+                    friendimg.style.transform = 'scale(1, 1)';
                     console.log(lastdirection);
                 }    
             }
