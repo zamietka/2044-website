@@ -1,10 +1,11 @@
 const friendcontainer = document.querySelector('#friendcontainer');
 const friendimg = document.querySelector('#friendimg');
-const friendcontext = document.querySelector('#friendcontext');
+const friendbox = document.querySelector('#friendbox');
 const friendmenu = document.querySelector('#friendmenu');
 const flex = document.querySelector('#flex')
 let lastdirection = '';
 let isMouseDown = false;
+hearts = 0;
 ghostHover = 0;
 catAwake = 0;
 
@@ -26,7 +27,7 @@ friendcontainer.addEventListener('click', () => {
 friendcontainer.addEventListener('contextmenu', (e) => {
     contextmenuon = true;
     e.preventDefault(); 
-    friendmenu.style.display = 'inline';
+    friendmenu.style.display = 'flex';
     friendmenu.style.left = `${friendcontainer.offsetLeft - 30}px`;
     friendmenu.style.top = `${friendcontainer.offsetTop}px`;
 })
@@ -101,11 +102,32 @@ flex.addEventListener('mouseup', () => {
 }
 
 function pet() {
+    document.querySelector('#hearts').appendChild(document.createElement('span')).textContent = '💙';
+    hearts++;
+    console.log(hearts);
     catAwake = 0;
     friendcontainer.src ="images/animacja-pet.gif"
     setTimeout(() => {
-    catAwake = 1;
-    friendcontainer.src ="images/animacjaidle.gif"
+        catAwake = 1;
+        friendcontainer.src ="images/animacjaidle.gif"
+        if (hearts === 10) {
+        alert("Kurku loves you!")
+    }
+  }, 2500);
+}
+
+function feed() {
+    document.querySelector('#hearts').appendChild(document.createElement('span')).textContent = '💙';
+    hearts++;
+    console.log(hearts);
+    catAwake = 0;
+    friendcontainer.src ="images/animacja-pet.gif"
+    setTimeout(() => {
+        catAwake = 1;
+        friendcontainer.src ="images/animacjaidle.gif"
+        if (hearts === 10) {
+        alert("Kurku loves you!")
+    }
   }, 2500);
 }
 

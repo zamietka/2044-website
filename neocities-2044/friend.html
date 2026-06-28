@@ -31,6 +31,12 @@ body {
 	display: flex;
 	flex-direction: row;
 }
+#friendmenu {
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+}
 
 #main {
 	color: #ffffff;
@@ -40,7 +46,7 @@ body {
 	background: linear-gradient(360deg,rgb(79, 8, 52) 0%, rgb(69, 4, 190) 24%, rgb(0, 21, 255) 100%);
 }
 
-#friendmenu {
+#friendmenu, #hearts {
 	position:absolute;
 }
 
@@ -52,24 +58,33 @@ body {
 
 <body>
 	<div id="flex">
+		<div id="hearts"> </div>
 		<div id="friendbox">
 			<div id="friendmenu">
-				<button onclick="pet()">Pet</button>
-				<button onclick="pet()">Feed</button>
+				<button  class="button" onclick="pet()">Pet</button>
+				<button  class="button" onclick="feed()">Feed</button>
 			</div>
 			<img id="friendcontainer" ondragstart="return false;" src="images/animacjawake.gif">
 		</div>
 		<div id="main">
 			
-			<div id="ghostdiv1"><h1>A little bit on virtual assistants, desktop pets, shimejis</h1>
+			<div id="ghostdiv1"><h1>A little bit on virtual assistants, shimejis, and their cousins</h1>
 				<p>Chances are you might remember some form of these. If you grew up with Windows, what would often greet you in the search or microsoft office were friendly looking assistants.
 					<br>
-					<img src="https://img1.picmix.com/output/stamp/normal/9/5/6/2/2132659_1e79d.gif">
-					<br>a
-
-				</p>
+					<img src="https://img1.picmix.com/output/stamp/normal/9/5/6/2/2132659_1e79d.gif" width: 100px;>
+					<br>
+				<p>Sometimes a wizard would pop up in the search box, sometimes a dog, sometimes opening MS Word greeted you with the talking clip.</p>
+				<p>The first idea for that came from the 90s, where the interest in computers grew beyond only hobbyists, and the company needed an efficient way to familiarise the new users with the new environment.</p>
+				<p>And what better way if not doing it through the mascots?</p>	
 			</div>
 			<div id="ghostdiv2" style="	border: 1px solid #3c8e33; width:auto; height:100px;">
+				<p>The first, well-known instance of this, and the first appearance of the dog comes from blablabla. It was a cute idea.
+					Demo:
+					Soon the assistants went beyond the operating systems and went to the desktop, and were still widely used in the 2000s. This is the time where the famous purple gorilla spyware comes to the scene.
+					<link>
+					Side note: isn't it funny how it was a big deal back in the day, but now it's normalised being spied on?
+
+				</p>
 			</div>
 			<div id="ghostdiv3" style="	border: 1px solid #3c8e33; width:auto; height:100px;">
 				New line
