@@ -1,4 +1,7 @@
 const friendcontainer = document.querySelector('#friendcontainer');
+const friendimg = document.querySelector('#friendimg');
+const friendcontext = document.querySelector('#friendcontext');
+const friendmenu = document.querySelector('#friendmenu');
 const flex = document.querySelector('#flex')
 let lastdirection = '';
 let isMouseDown = false;
@@ -6,6 +9,8 @@ ghostHover = 0;
 catAwake = 0;
 
 randomActions () 
+
+friendmenu.style.display = 'none';
 
 //wakeup
 friendcontainer.addEventListener('click', () => {
@@ -17,18 +22,42 @@ friendcontainer.addEventListener('click', () => {
     
 })
 
+//menu
+friendcontainer.addEventListener('contextmenu', (e) => {
+    contextmenuon = true;
+    e.preventDefault(); 
+    friendmenu.style.display = 'inline';
+    friendmenu.style.left = `${friendcontainer.offsetLeft - 30}px`;
+    friendmenu.style.top = `${friendcontainer.offsetTop}px`;
+})
+
+//disable menu
+document.addEventListener('mousedown', (e) => {
+    if (contextmenuon === true) {
+    setTimeout(() => {
+        contextmenuon = false;
+        friendmenu.style.display = 'none';
+        }, 400);
+    }
+    });
+
+
 //dangle
 friendcontainer.addEventListener('mousedown', (e) => {
-    friendcontainer.style.transition = '';
-    if (catAwake === 1){ 
-    friendcontainer.src ="images/animacjadangle.gif"
-    isMouseDown = true;
-    friendcontainer.style.pointerEvents = 'none';
-    friendcontainer.style.left = `${e.clientX - 30}px`;
-    friendcontainer.style.top = `${e.clientY + 10}px`;
-    x = e.clientX - friendcontainer.offsetLeft;
-    y = e.clientY - friendcontainer.offsetTop;
-    }
+    if(e.button == 0) {
+        contextmenuon = false;
+        friendmenu.style.display = 'none';
+        friendcontainer.style.transition = '';
+        if (catAwake === 1){ 
+        friendcontainer.src ="images/animacjadangle.gif"
+        isMouseDown = true;
+        friendcontainer.style.pointerEvents = 'none';
+        friendcontainer.style.left = `${e.clientX - 30}px`;
+        friendcontainer.style.top = `${e.clientY + 10}px`;
+        x = e.clientX - friendcontainer.offsetLeft;
+        y = e.clientY - friendcontainer.offsetTop;
+        }
+}
 });
 
 flex.addEventListener('mousemove', (e) => {
@@ -58,9 +87,9 @@ flex.addEventListener('mouseup', () => {
     if (ghostHover === i && catAwake === 1){
     friendcontainer.style.top = `${ghostDivs.offsetTop - friendcontainer.offsetHeight + ghostDivs.offsetHeight}px`;
     }
-    else if (ghostHover === 0 && catAwake === 1) {
-        friendcontainer.style.top = `${flex.offsetHeight - friendcontainer.offsetHeight}px`;
-    }
+    //else if (ghostHover === 0 && catAwake === 1) {
+    //    friendcontainer.style.top = `${flex.offsetHeight - friendcontainer.offsetHeight}px`;
+    //}
     if (catAwake === 1) {
     friendcontainer.style.transition = 'top 0.5s ease';
     setTimeout(() => {
@@ -71,7 +100,10 @@ flex.addEventListener('mouseup', () => {
 });
 }
 
-
+function pet() {
+    alert('wee');
+    friendimg.src ="images/animacjawake.gif"
+}
 
 //losowe lewo prawo
 function randomActions () {

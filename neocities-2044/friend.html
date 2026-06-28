@@ -40,6 +40,10 @@ body {
 	background: linear-gradient(360deg,rgb(79, 8, 52) 0%, rgb(69, 4, 190) 24%, rgb(0, 21, 255) 100%);
 }
 
+#friendmenu {
+	position:absolute;
+}
+
 </style>
 
 </head>
@@ -49,8 +53,12 @@ body {
 <body>
 	<div id="flex">
 		<div id="friendbox">
-			<img id="friendcontainer" ondragstart="return false;" src="images/animacjawake.gif">
+			<div id="friendmenu">
+				<button onclick="pet()">Pet</button>
+				<button onclick="pet()">Feed</button>
 			</div>
+			<img id="friendcontainer" ondragstart="return false;" src="images/animacjawake.gif">
+		</div>
 		<div id="main">
 			
 			<div id="Test1"><h1>A little bit on virtual assistants, desktop pets, shimejis</h1>
