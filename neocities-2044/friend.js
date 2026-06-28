@@ -101,7 +101,12 @@ flex.addEventListener('mouseup', () => {
 }
 
 function pet() {
+    catAwake = 0;
     friendcontainer.src ="images/animacja-pet.gif"
+    setTimeout(() => {
+    catAwake = 1;
+    friendcontainer.src ="images/animacjaidle.gif"
+  }, 2500);
 }
 
 //losowe lewo prawo
