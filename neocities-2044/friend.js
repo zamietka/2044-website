@@ -101,8 +101,7 @@ flex.addEventListener('mouseup', () => {
 }
 
 function pet() {
-    alert('wee');
-    friendimg.src ="images/animacjawake.gif"
+    friendcontainer.src ="images/animacja-pet.gif"
 }
 
 //losowe lewo prawo
