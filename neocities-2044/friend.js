@@ -8,6 +8,7 @@ let isMouseDown = false;
 hearts = 0;
 ghostHover = 0;
 catAwake = 0;
+contextmenuon = false;
 
 randomActions () 
 
@@ -71,7 +72,7 @@ flex.addEventListener('mousemove', (e) => {
 
 //divy
 const ghostDivsA = [];
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i <= 5; i++) {
   const ghostDivs = document.querySelector(`#ghostdiv${i}`);
   ghostDivsA.push(ghostDivs);
 
@@ -121,7 +122,7 @@ function feed() {
     hearts++;
     console.log(hearts);
     catAwake = 0;
-    friendcontainer.src ="images/animacja-pet.gif"
+    friendcontainer.src ="images/animacjaeat.gif"
     setTimeout(() => {
         catAwake = 1;
         friendcontainer.src ="images/animacjaidle.gif"
@@ -140,7 +141,7 @@ function randomActions () {
 
     setTimeout(() => {
 
-        if (isMouseDown) {
+        if (isMouseDown || contextmenuon) {
             return randomActions(); 
         }
 

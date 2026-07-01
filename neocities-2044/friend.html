@@ -40,13 +40,13 @@ body {
 
 #main {
 	color: #ffffff;
-	height:900px;
+	height:100dvh;
 	margin: auto;
 	width:60%;
 	background: linear-gradient(360deg,rgb(79, 8, 52) 0%, rgb(69, 4, 190) 24%, rgb(0, 21, 255) 100%);
 }
 
-#friendmenu, #hearts {
+#friendmenu {
 	position:absolute;
 }
 
@@ -58,7 +58,7 @@ body {
 
 <body>
 	<div id="flex">
-		<div id="hearts"> </div>
+		<div id="ghostdiv1" style="border: 1px solid #3c8e33; width:20%; height:100dvh;"></div>
 		<div id="friendbox">
 			<div id="friendmenu">
 				<button  class="button" onclick="pet()">Pet</button>
@@ -67,8 +67,8 @@ body {
 			<img id="friendcontainer" ondragstart="return false;" src="images/animacjawake.gif">
 		</div>
 		<div id="main">
-			
-			<div id="ghostdiv1"><h1>A little bit on virtual assistants, shimejis, and their cousins</h1>
+			<div id="hearts" style="display: flex; justify-content: center;"> </div>
+			<div id="ghostdiv2"><h1>A little bit on virtual assistants, shimejis, and their cousins</h1>
 				<p>Chances are you might remember some form of these. If you grew up with Windows, what would often greet you in the search or microsoft office were friendly looking assistants.
 					<br>
 					<img src="https://img1.picmix.com/output/stamp/normal/9/5/6/2/2132659_1e79d.gif" width: 100px;>
@@ -77,7 +77,7 @@ body {
 				<p>The first idea for that came from the 90s, where the interest in computers grew beyond only hobbyists, and the company needed an efficient way to familiarise the new users with the new environment.</p>
 				<p>And what better way if not doing it through the mascots?</p>	
 			</div>
-			<div id="ghostdiv2" style="	border: 1px solid #3c8e33; width:auto; height:100px;">
+			<div id="ghostdiv3" style="	border: 1px solid #3c8e33; width:auto; height:100px;">
 				<p>The first, well-known instance of this, and the first appearance of the dog comes from blablabla. It was a cute idea.
 					Demo:
 					Soon the assistants went beyond the operating systems and went to the desktop, and were still widely used in the 2000s. This is the time where the famous purple gorilla spyware comes to the scene.
@@ -86,13 +86,11 @@ body {
 
 				</p>
 			</div>
-			<div id="ghostdiv3" style="	border: 1px solid #3c8e33; width:auto; height:100px;">
+			<div id="ghostdiv4" style="border: 1px solid #3c8e33;">
 				New line
 			</div>
-			<br>a
-			<br>a
-			<br>a
 		</div>
+		<div id="ghostdiv5" style="border: 1px solid #3c8e33; width:20%; height:100dvh;"></div>
 	</div>
 </body>
 	<script src="friend.js">
