@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: neocities-2044/2044-website
+          path: 2044-website
           
       - name: Deploy to GitHub Pages
         id: deployment
