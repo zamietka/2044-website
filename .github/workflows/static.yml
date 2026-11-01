@@ -33,6 +33,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Fix paths for GitHub Pages
+        run: |
+            find neocities-2044 -name "*.html" -type f -exec sed -i \
+              -e 's|href="/|href="/2044-website/|g' \
+              -e 's|src="/|src="/2044-website/|g' \
+              {} +
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
